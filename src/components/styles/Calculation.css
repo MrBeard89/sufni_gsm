@@ -1,0 +1,137 @@
+/*Form -  Main Divs */
+.calculation_main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 8rem;
+}
+.calculation_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+/* ********************** */
+/* Main title */
+.calculation_title {
+  display: block;
+  text-align: center;
+  color: #efefef;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #efefef;
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Form styleing */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+input {
+  color: rgb(187, 187, 187);
+  height: 2.3rem;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 1.3rem;
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+  text-align: left;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+input:focus {
+  border: 2px solid rgb(56, 56, 56);
+}
+
+label {
+  color: #303030b7;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  width: fit-content;
+  padding-bottom: 5px;
+}
+select {
+  color: #16bdff;
+  background-color: #efefef;
+  height: 2.3rem;
+  border: 1px solid #efefef;
+  border-radius: 1.3rem;
+  outline: none;
+  font-size: 1.6rem;
+  text-align: left;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+select:focus {
+  border: 1.5px solid rgb(119, 119, 119);
+}
+/* Button */
+.btn {
+  width: 10rem;
+  height: 2rem;
+  background-color: rgb(77, 77, 77);
+  color: #fff;
+  margin-bottom: 3rem;
+  text-align: center;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  border-radius: 2rem;
+  margin-left: 11rem;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(49, 49, 49);
+}
+.btn:active {
+  cursor: pointer;
+  background-color: rgb(170, 170, 170);
+}
+
+/* ************************************* */
+/*Calculation Data -  Main Divs */
+.calculation_mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efefef;
+  color: #303030b7;
+  font-weight: 500;
+  width: 500px;
+  height: 700px;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.calc_data_main {
+  position: relative;
+  text-align: center;
+  margin-top: 8rem;
+}
+/* Calculation Data - Title */
+.calc_data_main h2 {
+  position: absolute;
+  top: -8rem;
+}
+
+/* Bold fonts */
+.calc_data_main span {
+  font-weight: 700;
+}
+/* decor - Line */
+.currency_line {
+  background-color: #16bdff;
+  border: none;
+  height: 2px;
+  margin-top: 3rem;
+}
+/* Thanks for using the Calculator */
+.thanks {
+  margin-top: 2rem;
+}

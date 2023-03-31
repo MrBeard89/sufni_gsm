@@ -1,0 +1,65 @@
+.phones_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.phones_container {
+  margin: 2rem auto;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 25px;
+  row-gap: 25px;
+  padding: 0 1rem;
+  font-size: 13px;
+  width: fit-content;
+}
+.phones {
+  background-color: #efefef;
+  width: 12rem;
+  height: fit-content;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.phones:hover {
+  background-color: #7fdbff;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px 8px #fff;
+  transition: 0.5s ease;
+}
+.phones:active {
+  background-color: #58d0ff;
+  transition: 0.2s ease;
+}
+
+.phones_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #efefef;
+  font-size: 2rem;
+}
+.line {
+  width: 70vw;
+  height: 4px;
+  background-color: #efefef;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+.phone_text {
+  display: flex;
+  justify-content: space-between;
+}
+.phone_data {
+  font-weight: 700;
+}

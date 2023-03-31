@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React from 'react'
+import Navbar from './components/pages/Navbar'
+import Products from './components/pages/Products'
+import Calculation from './components/pages/Calculation'
+import Home from './components/pages/Home'
+import Footer from './components/pages/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {
+  CurrencyContext,
+  CurrencyContextDefaults,
+} from './context/CurrencyContext'
+import { useState, useContext, useEffect } from 'react'
+import {
+  SelectedPhoneContext,
+  SelectedPhoneContextDefault,
+} from './context/SelectedPhoneContext'
 
 function App() {
+  const [currency, setCurrency] = useState(CurrencyContextDefaults)
+  const [selectedPhone, setSelectedPhone] = useState(
+    SelectedPhoneContextDefault.value
+  )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <SelectedPhoneContext.Provider
+        value={{ selectedPhone, setSelectedPhone }}
+      >
+        <CurrencyContext.Provider value={{ currency, setCurrency }}>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/home' element={<Home />} />
+              <Route path='/products' element={<Products />} />
+              <Route path='/calculation' element={<Calculation />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </CurrencyContext.Provider>
+      </SelectedPhoneContext.Provider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
