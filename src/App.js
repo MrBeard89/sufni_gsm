@@ -5,29 +5,19 @@ import Products from './components/pages/Products'
 import Calculation from './components/pages/Calculation'
 import Home from './components/pages/Home'
 import Footer from './components/pages/Footer'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {
-  CurrencyContext,
-  CurrencyContextDefaults,
-} from './context/CurrencyContext'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { CurrencyContext, CurrencyContextDefaults } from './context/CurrencyContext'
 import { useState, useContext, useEffect } from 'react'
-import {
-  SelectedPhoneContext,
-  SelectedPhoneContextDefault,
-} from './context/SelectedPhoneContext'
+import { SelectedPhoneContext, SelectedPhoneContextDefault } from './context/SelectedPhoneContext'
 
 function App() {
   const [currency, setCurrency] = useState(CurrencyContextDefaults)
-  const [selectedPhone, setSelectedPhone] = useState(
-    SelectedPhoneContextDefault.value
-  )
+  const [selectedPhone, setSelectedPhone] = useState(SelectedPhoneContextDefault.value)
   return (
     <div className='App'>
-      <SelectedPhoneContext.Provider
-        value={{ selectedPhone, setSelectedPhone }}
-      >
+      <SelectedPhoneContext.Provider value={{ selectedPhone, setSelectedPhone }}>
         <CurrencyContext.Provider value={{ currency, setCurrency }}>
-          <BrowserRouter>
+          <Router basename={process.env.PUBLIC_URL}>
             <Navbar />
             <Routes>
               <Route path='/' element={<Home />} />
@@ -36,7 +26,7 @@ function App() {
               <Route path='/calculation' element={<Calculation />} />
             </Routes>
             <Footer />
-          </BrowserRouter>
+          </Router>
         </CurrencyContext.Provider>
       </SelectedPhoneContext.Provider>
     </div>
